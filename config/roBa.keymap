@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_MOUSE_POINTING_SCRL_VAL 100
-
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -63,11 +62,11 @@
             tapping-term-ms = <200>;
         };
 
-        encoder_msc_up_down: encoder_msc_up_down {
+        scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_UP_DOWN";
+            label = "SCROLL_UP_DOWN";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             tap-ms = <20>;
         };
@@ -84,7 +83,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LC(SPACE)  &lt 1 SPACE  &lt 6 SPACE         &kp ENTER  &lt 2 ENTER                             &kp BACKSPACE
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
@@ -95,7 +94,7 @@
 &trans           &trans       &trans    &kp LEFT_SHIFT  &trans       &trans             &trans             &trans                                                                 &kp BACKSPACE
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         NUM {
@@ -106,7 +105,7 @@
 &trans        &trans        &trans        &trans        &trans        &trans       &trans  &trans                                                         &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         ARROW {
@@ -128,7 +127,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                    &trans
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         SCROLL {
